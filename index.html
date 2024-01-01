@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <title>Library</title>
+</head>
+<body>
+    <header class="header">
+        Library
+    </header>
+    <main class="main-container">
+        <button class="new-book-btn" data-open-modal>+ Add book</button>
+        <div class="books-grid"></div>
+    </main>
+    <dialog class="modal" data-modal>
+        <form class="add-book-form" id="addBookForm">
+            <h2>Add a new book</h3>
+            <input type="text" name="title" id="title" placeholder="Title" required maxlength="100">
+            <input type="text" name="author" id="author" placeholder="Author" required maxlength="100">
+            <input type="number" name="pages" id="pages" placeholder="Pages" required maxlength="10000">
+            <div class="has-read">
+                <label for="has-read">Have you read it?</label>
+                <input type="checkbox" type="checkbox" id="hasRead"/>
+            </div>
+            <button class="submit-btn" data-close-modal>Submit</button>
+        </form>
+    <dialog>
+</body>
+</html>

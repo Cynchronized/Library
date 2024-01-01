@@ -1,0 +1,109 @@
+:root {
+    --text-color: #101311;
+    --background-color: #f8f9f8;
+    --primary-color: #7a9987;
+    --secondary-color: #adc4b7;
+    --accent-color: #89ae99;
+    --border-radius: 8px;
+    --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-family: 'Noto Sans', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+}
+
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 4vh;
+    font-size: 3rem;
+    box-shadow: var(--shadow);
+}
+
+/* Buttons */
+
+.new-book-btn {
+    padding: 20px;
+    font-size: 24px;
+    background-color: var(--secondary-color);
+    transition: filter 0.15s ease-in-out;
+}
+
+.new-book-btn:hover {
+    filter: brightness(90%);
+}
+
+.submit-btn {
+    width: 100%;
+    height: 30px;
+    background-color: var(--accent-color);
+}
+
+/* Modal */
+
+.modal {
+    box-shadow: var(--shadow);
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.modal::backdrop {
+    background: rgb(0 0 0 / .5);
+}
+
+.modal[open] {
+    animation: fade-in 500ms forwards;
+}
+
+.modal [open]::backdrop {
+    animation: fade-in 500ms forwards;
+}
+
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 30px;
+    font-weight: 600;
+    border: none;
+}
+
+#hasRead {
+    cursor: pointer;
+}
+
+/* Keyframes */
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
