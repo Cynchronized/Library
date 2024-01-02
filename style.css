@@ -4,6 +4,8 @@
     --primary-color: #7a9987;
     --secondary-color: #adc4b7;
     --accent-color: #89ae99;
+    --light-green: #9fff9c;
+    --light-red: #ff9c9c;
     --border-radius: 8px;
     --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -13,12 +15,12 @@ body {
     background-color: var(--secondary-color);
     color: var(--text-color);
     font-family: 'Noto Sans', sans-serif;
+    word-wrap: break-word;
 }
 
 main {
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 5vh;
 }
 
@@ -46,21 +48,39 @@ button {
 
 /* Buttons */
 
-.new-book-btn {
-    padding: 20px;
-    font-size: 24px;
+.btn-new-book {
     background-color: var(--secondary-color);
     transition: filter 0.15s ease-in-out;
+    padding: 20px;
+    font-size: 24px;
 }
 
-.new-book-btn:hover {
+.btn:hover {
     filter: brightness(90%);
 }
+
 
 .submit-btn {
     width: 100%;
     height: 30px;
     background-color: var(--accent-color);
+}
+
+.btn-light-green {
+    background-color: var(--light-green);
+    padding: 10px;
+    font-size: 24px;
+}
+
+.btn-light-red {
+    background-color: var(--light-red);
+    padding: 10px;
+    font-size: 24px;
+}
+
+.remove-btn {
+    padding: 10px;
+    font-size: 24px;
 }
 
 /* Modal */
@@ -95,6 +115,35 @@ button {
 
 #hasRead {
     cursor: pointer;
+}
+
+/* Book Cards */ 
+
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-left: 100px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    gap: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 50px;
+    background-color: var(--background-color);
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 /* Keyframes */

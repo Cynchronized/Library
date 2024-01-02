@@ -2,7 +2,7 @@
 const myLibrary = []
 
 // variables
-const addBookButton = document.querySelector(".new-book-btn")
+const addBookButton = document.querySelector(".btn-new-book")
 const submitButton = document.querySelector(".submit-btn")
 const modal = document.querySelector("[data-modal]")
 const booksGrid = document.querySelector('.books-grid')
@@ -52,13 +52,16 @@ function createBookCard (book) {
     buttonGroup.classList.add('button-group')
     readBtn.classList.add('read-btn')
     removeBtn.classList.add('remove-btn')
+    readBtn.classList.add('btn')
+    removeBtn.classList.add('btn')
+    
 
     title.textContent = `${book.title}`
     author.textContent = `${book.author}`
     pages.textContent = `${book. pages} pages`
     removeBtn.textContent = 'Remove'
 
-    if (book.isRead) {
+    if (book.read) {
         readBtn.textContent = 'Read'
         readBtn.classList.add('btn-light-green')
     } else {
@@ -74,9 +77,27 @@ function createBookCard (book) {
     bookCard.appendChild(buttonGroup)
     booksGrid.appendChild(bookCard)
 
+    // Changes read button color
+    readBtn.addEventListener('click', () => {
+        book.read = !book.read
+        renderBooks()
+    })
+
+    removeBtn.addEventListener('click', () => {
+        myLibrary.splice(myLibrary.indexOf(book),1)
+        renderBooks()
+    })
+
 }
 
 
+
+
+// Handle Modal
+
+addBookButton.addEventListener("click", () => {
+    modal.showModal();
+})
 
 form.addEventListener("submit", function() {
     event.preventDefault();
@@ -84,11 +105,6 @@ form.addEventListener("submit", function() {
     modal.close();
 })
 
-// Handle Modal
-
-addBookButton.addEventListener("click", () => {
-    modal.showModal();
-})
 
 
 
